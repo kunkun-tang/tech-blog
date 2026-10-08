@@ -1,0 +1,9 @@
+public/
+resources/_gen/
+.hugo_build.lock
+.DS_Store
+/README.md
+.tools/
+.env
+.env.*
+!.env.example

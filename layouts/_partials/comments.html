@@ -1,0 +1,28 @@
+{{- $giscus := site.Params.giscus -}}
+{{- if and $giscus.enabled (not .Draft) -}}
+  {{- if not (and $giscus.repo $giscus.repoId $giscus.categoryId) -}}
+    {{- errorf "giscus is enabled but repo, repoId, or categoryId is missing" -}}
+  {{- end -}}
+  <section class="giscus-container" aria-label="评论">
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="{{ $giscus.repo }}"
+      data-repo-id="{{ $giscus.repoId }}"
+      data-category="{{ $giscus.category }}"
+      data-category-id="{{ $giscus.categoryId }}"
+      data-mapping="pathname"
+      data-strict="1"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+    </script>
+    {{- $themeScript := resources.Get "js/giscus-theme.js" | minify | fingerprint -}}
+    <script src="{{ $themeScript.RelPermalink }}" integrity="{{ $themeScript.Data.Integrity }}" crossorigin="anonymous" defer></script>
+    <noscript>请启用 JavaScript，以查看和参与 GitHub Discussions 评论。</noscript>
+  </section>
+{{- end -}}

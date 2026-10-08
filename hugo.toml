@@ -1,0 +1,91 @@
+baseURL = "https://liang.cyeagle.com/"
+title = "Liang 的技术博客"
+theme = "PaperMod"
+languageCode = "zh-CN"
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+timeZone = "America/New_York"
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup.highlight]
+  noClasses = false
+  lineNos = false
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+
+[params]
+  description = "记录技术学习、实践与思考。"
+  author = "Liang"
+  defaultTheme = "auto"
+  DateFormat = "2006年01月02日"
+  mainSections = ["posts"]
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  comments = true
+  disableSpecial1stPost = true
+
+[params.homeInfoParams]
+  Title = "你好，我是 Liang"
+  Content = "在这里记录技术学习、实践与思考。"
+
+[params.assets]
+  favicon = "favicon.svg"
+  favicon16x16 = "favicon.svg"
+  favicon32x32 = "favicon.svg"
+  apple_touch_icon = "favicon.svg"
+  safari_pinned_tab = "favicon.svg"
+
+[params.giscus]
+  enabled = false
+  repo = "kunkun-tang/tech-blog"
+  repoId = "R_kgDOVBLq_g"
+  category = "Announcements"
+  categoryId = "DIC_kwDOVBLq_s4DHWEm"
+
+[params.cloudflare]
+  token = ""
+
+[[menu.main]]
+  name = "文章"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  name = "归档"
+  url = "/archives/"
+  weight = 20
+
+[[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  name = "搜索"
+  url = "/search/"
+  weight = 40
+
+[[menu.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 50
